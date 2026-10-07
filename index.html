@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>شي على شي | حيل • تطبيقات • ربح</title>
+  <style>
+    :root {
+      --primary-blue: #0284c7;
+      --dark-blue: #0f172a;
+      --accent-yellow: #f59e0b;
+      --bg-light: #f8fafc;
+      --card-bg: #ffffff;
+      --text-color: #334155;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-light);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    /* الهيدر وشريط التنقل */
+    header {
+      background-color: var(--dark-blue);
+      color: white;
+      padding: 15px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-container img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 2px solid var(--accent-yellow);
+    }
+
+    .brand-title {
+      font-size: 22px;
+      font-weight: bold;
+      color: white;
+    }
+
+    .brand-title span {
+      color: var(--accent-yellow);
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--accent-yellow);
+    }
+
+    /* قسم الترحيب الرئيسي */
+    .hero {
+      background: linear-gradient(135deg, #0f172a 0%, #0284c7 100%);
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .hero h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #e2e8f0;
+      margin-bottom: 20px;
+    }
+
+    .search-box {
+      max-width: 500px;
+      margin: 0 auto;
+      display: flex;
+      gap: 10px;
+    }
+
+    .search-box input {
+      flex: 1;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      outline: none;
+    }
+
+    .search-box button {
+      background-color: var(--accent-yellow);
+      color: var(--dark-blue);
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .search-box button:hover {
+      background-color: #d97706;
+      color: white;
+    }
+
+    /* الحاوية الرئيسية للمحتوى */
+    .container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .section-title {
+      font-size: 24px;
+      margin-bottom: 20px;
+      border-right: 5px solid var(--accent-yellow);
+      padding-right: 12px;
+      color: var(--dark-blue);
+    }
+
+    /* شبكة الكروت (المشاركات/التطبيقات) */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin-bottom: 40px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      transition: transform 0.3s, box-shadow 0.3s;
+      border: 1px solid #e2e8f0;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+    }
+
+    .card-tag {
+      background-color: var(--primary-blue);
+      color: white;
+      font-size: 12px;
+      padding: 4px 10px;
+      border-radius: 4px;
+      display: inline-block;
+      margin: 15px 15px 0 15px;
+    }
+
+    .card-tag.profit { background-color: #10b981; }
+    .card-tag.trick { background-color: var(--accent-yellow); color: var(--dark-blue); font-weight: bold; }
+
+    .card-body {
+      padding: 15px;
+    }
+
+    .card-title {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: var(--dark-blue);
+    }
+
+    .card-text {
+      font-size: 14px;
+      color: #64748b;
+      margin-bottom: 15px;
+    }
+
+    .btn-link {
+      display: block;
+      text-align: center;
+      background-color: var(--dark-blue);
+      color: white;
+      text-decoration: none;
+      padding: 10px;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn-link:hover {
+      background-color: var(--primary-blue);
+    }
+
+    /* الفوتر (الأسفل) */
+    footer {
+      background-color: var(--dark-blue);
+      color: white;
+      text-align: center;
+      padding: 25px;
+      margin-top: 50px;
+    }
+
+    .social-links {
+      margin-top: 10px;
+    }
+
+    .social-links a {
+      color: var(--accent-yellow);
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- الهيدر -->
+  <header>
+    <div class="logo-container">
+      <!-- استبدل رابط الصورة برابط لوجو الصفحة لديك إذا كان مرفوعاً -->
+      <div class="brand-title">شي <span>على</span> شي</div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#">الرئيسية</a></li>
+        <li><a href="#tricks">حيل</a></li>
+        <li><a href="#apps">تطبيقات</a></li>
+        <li><a href="#profit">طرق ربح</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- القسم الترحيبي -->
+  <section class="hero">
+    <h1>موقع شي على شي (shialashi)</h1>
+    <p>دليلك الأول لأفضل الحيل الرقمية، التطبيقات المفيدة، وطرق الربح الموثوقة من الإنترنت</p>
+    <div class="search-box">
+      <input type="text" placeholder="ابحث عن تطبيق، حيلة، أو طريقة ربح...">
+      <button>بحث</button>
+    </div>
+  </section>
+
+  <div class="container">
+
+    <!-- قسم أحدث الإضافات -->
+    <h2 class="section-title">أحدث المشاركات والتوصيات</h2>
+    
+    <div class="grid">
+
+      <!-- كارت 1: ربح -->
+      <div class="card">
+        <span class="card-tag profit">ربح من الإنترنت</span>
+        <div class="card-body">
+          <h3 class="card-title">أفضل 3 مواقع صادقة للربح للمبتدئين</h3>
+          <p class="card-text">شرح بسيط ومبسط لأهم المواقع التي يمكنك البدء منها لتحقيق دخل إضافي بدون رأس مال.</p>
+          <a href="#" class="btn-link">عرض التفاصيل</a>
+        </div>
+      </div>
+
+      <!-- كارت 2: تطبيقات -->
+      <div class="card">
+        <span class="card-tag">تطبيقات مفيدة</span>
+        <div class="card-body">
+          <h3 class="card-title">تطبيق خرافي للمونتاج وتعديل الصور</h3>
+          <p class="card-text">تطبيق مجاني يقدم ميزات بالذكاء الاصطناعي تساعدك على تحسين جودة الصور والفيديوهات.</p>
+          <a href="#" class="btn-link">تحميل التطبيق</a>
+        </div>
+      </div>
+
+      <!-- كارت 3: حيل -->
+      <div class="card">
+        <span class="card-tag trick">حيل وتقنية</span>
+        <div class="card-body">
+          <h3 class="card-title">حيلة مخفية في أجهزة الهواتف للسرعة</h3>
+          <p class="card-text">خطوات سريعة لتسريع هاتفك وإخلاء المساحة العشوائية بدون حذف الصور أو الملفات.</p>
+
+          <a href="#" class="btn-link">قراءة الحيلة</a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- الفوتر -->
+  <footer>
+    <p>جميع الحقوق محفوظة منصة <strong>شي على شي</strong> &copy; 2026</p>
+    <div class="social-links">
+      <p>تابعنا على يوزر البيج: <a href="#">@shialashi</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>
