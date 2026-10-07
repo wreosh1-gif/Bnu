@@ -132,6 +132,7 @@
       max-width: 1100px;
       margin: 35px auto;
       padding: 0 20px;
+      min-height: 350px;
     }
 
     .section-title {
@@ -142,7 +143,7 @@
       color: var(--dark-blue);
     }
 
-    /* شبكة الكروت */
+    /* شبكة الكروت (ستمتلئ أوتوماتيكياً بواسطة ملفات typ.js) */
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -211,22 +212,50 @@
       background-color: var(--primary-blue);
     }
 
-    /* قسم اتصل بنا */
-    .contact-section {
-      background: var(--card-bg);
+    /* تصميم النوافذ المنبثقة (Modal) */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(15, 23, 42, 0.7);
+      z-index: 2000;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .modal-content {
+      background: white;
       padding: 30px;
       border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      border: 1px solid #e2e8f0;
-      margin-top: 40px;
+      max-width: 550px;
+      width: 100%;
+      position: relative;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      font-size: 24px;
+      cursor: pointer;
+      color: #64748b;
+      border: none;
+      background: none;
+      line-height: 1;
     }
 
     .contact-form {
       display: flex;
       flex-direction: column;
       gap: 15px;
-      max-width: 600px;
-      margin: 0 auto;
+      margin-top: 15px;
     }
 
     .form-group {
@@ -277,6 +306,7 @@
       text-align: center;
       font-weight: bold;
       font-size: 14px;
+      margin-bottom: 10px;
     }
 
     .form-status.success {
@@ -291,42 +321,6 @@
       background-color: #fee2e2;
       color: #991b1b;
       border: 1px solid #fca5a5;
-    }
-
-    /* النوافذ المنبثقة (Modal) لصفحات من نحن والخصوصية */
-    .modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(15, 23, 42, 0.7);
-      z-index: 2000;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-    }
-
-    .modal-content {
-      background: white;
-      padding: 30px;
-      border-radius: 12px;
-      max-width: 600px;
-      width: 100%;
-      position: relative;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    }
-
-    .close-btn {
-      position: absolute;
-      top: 15px;
-      left: 15px;
-      font-size: 22px;
-      cursor: pointer;
-      color: #64748b;
-      border: none;
-      background: none;
     }
 
     /* الفوتر السفلي */
@@ -391,43 +385,18 @@
 
   <div class="container">
 
-    <!-- قسم أحدث الإضافات -->
+    <!-- قسم المشاركات الرئيسي -->
     <h2 class="section-title">أحدث المشاركات والتوصيات</h2>
     
-    <div class="grid">
-      <!-- كارت 1: ربح -->
-      <div class="card">
-        <span class="card-tag profit">ربح من الإنترنت</span>
-        <div class="card-body">
-          <h3 class="card-title">أفضل 3 مواقع صادقة للربح للمبتدئين</h3>
-          <p class="card-text">شرح بسيط ومبسط لأهم المواقع التي يمكنك البدء منها لتحقيق دخل إضافي بدون رأس مال.</p>
-          <a href="#" class="btn-link">عرض التفاصيل</a>
-        </div>
-      </div>
+    <!-- الشبكة خالية الآن تماماً لتستقبل ملفات الجافاسكريبت -->
+    <div class="grid" id="mainGrid"></div>
 
-      <!-- كارت 2: تطبيقات -->
-      <div class="card">
-        <span class="card-tag">تطبيقات مفيدة</span>
-        <div class="card-body">
-          <h3 class="card-title">تطبيق خرافي للمونتاج وتعديل الصور</h3>
-          <p class="card-text">تطبيق مجاني يقدم ميزات بالذكاء الاصطناعي تساعدك على تحسين جودة الصور والفيديوهات.</p>
-          <a href="#" class="btn-link">تحميل التطبيق</a>
-        </div>
-      </div>
+  </div>
 
-      <!-- كارت 3: حيل -->
-      <div class="card">
-        <span class="card-tag trick">حيل وتقنية</span>
-        <div class="card-body">
-          <h3 class="card-title">حيلة مخفية في أجهزة الهواتف للسرعة</h3>
-          <p class="card-text">خطوات سريعة لتسريع هاتفك وإخلاء المساحة العشوائية بدون حذف الصور أو الملفات.</p>
-          <a href="#" class="btn-link">قراءة الحيلة</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- قسم اتصل بنا -->
-    <div class="contact-section" id="contact">
+  <!-- نافذة "اتصل بنا" المنبثقة -->
+  <div id="contactModal" class="modal">
+    <div class="modal-content">
+      <button class="close-btn" onclick="closeModal('contactModal')">&times;</button>
       <h2 class="section-title">اتصل بنا</h2>
       <div id="statusMessage" class="form-status"></div>
       
@@ -442,15 +411,14 @@
         </div>
         <div class="form-group">
           <label for="message">الرسالة:</label>
-          <textarea id="message" name="message" rows="5" placeholder="اكتب رسالتك هنا..." required></textarea>
+          <textarea id="message" name="message" rows="4" placeholder="اكتب رسالتك هنا..." required></textarea>
         </div>
         <button type="submit" class="submit-btn" id="submitBtn">إرسال الرسالة</button>
       </form>
     </div>
-
   </div>
 
-  <!-- نافذة "من نحن" -->
+  <!-- نافذة "من نحن" المنبثقة -->
   <div id="aboutModal" class="modal">
     <div class="modal-content">
       <button class="close-btn" onclick="closeModal('aboutModal')">&times;</button>
@@ -459,7 +427,7 @@
     </div>
   </div>
 
-  <!-- نافذة "سياسة الخصوصية" -->
+  <!-- نافذة "سياسة الخصوصية" المنبثقة -->
   <div id="privacyModal" class="modal">
     <div class="modal-content">
       <button class="close-btn" onclick="closeModal('privacyModal')">&times;</button>
@@ -472,15 +440,14 @@
   <footer>
     <div class="footer-links">
       <a onclick="openModal('aboutModal')">من نحن</a>
-      <a href="#contact">اتصل بنا</a>
+      <a onclick="openModal('contactModal')">اتصل بنا</a>
       <a onclick="openModal('privacyModal')">سياسة الخصوصية</a>
     </div>
     <p>جميع الحقوق محفوظة منصة <strong>شي على شي</strong> &copy; 2026</p>
   </footer>
 
-  <!-- السكريبت الخاص بفتح النوافذ وإرسال النموذج بدون توجيه -->
+  <!-- البرمجيات الأساسية للنوافذ والإرسال -->
   <script>
-    // التحكم بالنوافذ المنبثقة
     function openModal(id) {
       document.getElementById(id).style.display = 'flex';
     }
@@ -488,17 +455,20 @@
       document.getElementById(id).style.display = 'none';
     }
 
-    // إرسال البيانات إلى Formspree بدون مغادرة الموقع
+    window.onclick = function(event) {
+      if (event.target.classList.contains('modal')) {
+        event.target.style.display = 'none';
+      }
+    };
+
     const form = document.getElementById('contactForm');
     const status = document.getElementById('statusMessage');
     const submitBtn = document.getElementById('submitBtn');
 
     form.addEventListener('submit', async function(e) {
       e.preventDefault();
-      
       submitBtn.disabled = true;
       submitBtn.innerText = 'جاري الإرسال...';
-      
       const formData = new FormData(form);
 
       try {
@@ -510,21 +480,28 @@
 
         if (response.ok) {
           status.className = 'form-status success';
-          status.innerText = '✨ تم إرسال رسالتك بنجاح! سنرد عليك في أقرب وقت.';
+          status.innerText = '✨ تم إرسال رسالتك بنجاح!';
           form.reset();
         } else {
           status.className = 'form-status error';
-          status.innerText = 'حدث خطأ أثناء الإرسال، يرجى المحاولة مرة أخرى.';
+          status.innerText = 'حدث خطأ أثناء الإرسال، حاول مجدداً.';
         }
       } catch (error) {
         status.className = 'form-status error';
-        status.innerText = 'تعذر الاتصال بالسيرفر، تحقق من اتصالك بالإنترنت.';
+        status.innerText = 'تعذر الاتصال بالسيرفر، تحقق من الإنترنت.';
       } finally {
         submitBtn.disabled = false;
         submitBtn.innerText = 'إرسال الرسالة';
       }
     });
   </script>
+
+  <!-- ==================================================== -->
+  <!-- استدعاء ملفات المواضيع الخارجية المستقبلية -->
+  <!-- ==================================================== -->
+  
+  <script src="typ1.js"></script>
+  <!-- <script src="typ2.js"></script> -->
 
 </body>
 </html>
