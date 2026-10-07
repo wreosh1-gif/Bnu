@@ -4,6 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>شي على شي | حيل • تطبيقات • ربح</title>
+
+  <!-- أيقونة الموقع وصورة المعاينة -->
+  <link rel="icon" type="image/png" href="cover.png">
+  <link rel="apple-touch-icon" href="cover.png">
+
+  <meta property="og:title" content="شي على شي | حيل • تطبيقات • ربح">
+  <meta property="og:description" content="دليلك الأول لأفضل الحيل الرقمية، التطبيقات المفيدة، وطرق الربح الموثوقة من الإنترنت.">
+  <meta property="og:image" content="mg.png">
+  <meta property="og:type" content="website">
+
   <style>
     :root {
       --primary-blue: #0284c7;
@@ -59,12 +69,12 @@
       color: var(--accent-yellow);
     }
 
-    /* واجهة الـ Hero تم تكبيرها وإضافة اسم الموقع داخلها */
+    /* واجهة الـ Hero */
     .hero {
       background: linear-gradient(135deg, #0f172a 0%, #0284c7 100%);
       color: white;
       text-align: center;
-      padding: 45px 20px; /* زيادة حجم الارتفاع والحجم */
+      padding: 45px 20px;
     }
 
     .hero h1 {
@@ -201,6 +211,124 @@
       background-color: var(--primary-blue);
     }
 
+    /* قسم اتصل بنا */
+    .contact-section {
+      background: var(--card-bg);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      border: 1px solid #e2e8f0;
+      margin-top: 40px;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .form-group label {
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--dark-blue);
+    }
+
+    .form-group input, .form-group textarea {
+      padding: 10px 14px;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+
+    .form-group input:focus, .form-group textarea:focus {
+      border-color: var(--primary-blue);
+    }
+
+    .submit-btn {
+      background-color: var(--primary-blue);
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 15px;
+      transition: 0.3s;
+    }
+
+    .submit-btn:hover {
+      background-color: var(--dark-blue);
+    }
+
+    .form-status {
+      display: none;
+      padding: 12px;
+      border-radius: 6px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .form-status.success {
+      display: block;
+      background-color: #d1fae5;
+      color: #065f46;
+      border: 1px solid #a7f3d0;
+    }
+
+    .form-status.error {
+      display: block;
+      background-color: #fee2e2;
+      color: #991b1b;
+      border: 1px solid #fca5a5;
+    }
+
+    /* النوافذ المنبثقة (Modal) لصفحات من نحن والخصوصية */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(15, 23, 42, 0.7);
+      z-index: 2000;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      max-width: 600px;
+      width: 100%;
+      position: relative;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      font-size: 22px;
+      cursor: pointer;
+      color: #64748b;
+      border: none;
+      background: none;
+    }
+
     /* الفوتر السفلي */
     footer {
       background-color: var(--dark-blue);
@@ -223,6 +351,7 @@
       text-decoration: none;
       font-size: 14px;
       font-weight: bold;
+      cursor: pointer;
       transition: 0.2s;
     }
 
@@ -250,7 +379,7 @@
     </nav>
   </header>
 
-  <!-- واجهة الـ Hero مع إضافة اسم الموقع وتكبير الحجم -->
+  <!-- واجهة الـ Hero -->
   <section class="hero">
     <h1>شي <span>على</span> شي</h1>
     <p>دليلك الأول لأفضل الحيل الرقمية، التطبيقات المفيدة، وطرق الربح الموثوقة</p>
@@ -266,7 +395,6 @@
     <h2 class="section-title">أحدث المشاركات والتوصيات</h2>
     
     <div class="grid">
-
       <!-- كارت 1: ربح -->
       <div class="card">
         <span class="card-tag profit">ربح من الإنترنت</span>
@@ -296,20 +424,107 @@
           <a href="#" class="btn-link">قراءة الحيلة</a>
         </div>
       </div>
-
     </div>
 
+    <!-- قسم اتصل بنا -->
+    <div class="contact-section" id="contact">
+      <h2 class="section-title">اتصل بنا</h2>
+      <div id="statusMessage" class="form-status"></div>
+      
+      <form id="contactForm" class="contact-form" action="https://formspree.io/f/mbgjqeww" method="POST">
+        <div class="form-group">
+          <label for="name">الاسم:</label>
+          <input type="text" id="name" name="name" placeholder="أدخل اسمك الكريم" required>
+        </div>
+        <div class="form-group">
+          <label for="email">البريد الإلكتروني:</label>
+          <input type="email" id="email" name="email" placeholder="example@domain.com" required>
+        </div>
+        <div class="form-group">
+          <label for="message">الرسالة:</label>
+          <textarea id="message" name="message" rows="5" placeholder="اكتب رسالتك هنا..." required></textarea>
+        </div>
+        <button type="submit" class="submit-btn" id="submitBtn">إرسال الرسالة</button>
+      </form>
+    </div>
+
+  </div>
+
+  <!-- نافذة "من نحن" -->
+  <div id="aboutModal" class="modal">
+    <div class="modal-content">
+      <button class="close-btn" onclick="closeModal('aboutModal')">&times;</button>
+      <h2 class="section-title">من نحن</h2>
+      <p style="margin-top: 15px; color: #475569;">مرحباً بك في منصة <strong>شي على شي</strong>! نحن منصة متخصصة في توفير أحدث الحيل التقنية، التطبيقات المفيدة، واستراتيجيات الربح الموثوقة من الإنترنت، بهدف إثراء المحتوى العربي وتبسيط التكنولوجيا للجميع.</p>
+    </div>
+  </div>
+
+  <!-- نافذة "سياسة الخصوصية" -->
+  <div id="privacyModal" class="modal">
+    <div class="modal-content">
+      <button class="close-btn" onclick="closeModal('privacyModal')">&times;</button>
+      <h2 class="section-title">سياسة الخصوصية</h2>
+      <p style="margin-top: 15px; color: #475569;">نحن في <strong>شي على شي</strong> نولي أهمية كبيرة لخصوصية زوارنا. لا نقوم بجمع أي بيانات شخصية إلا البيانات التي تقدمها طوعاً من خلال نموذج التواصل، ونلتزم بعدم مشاركة بياناتك مع أي طرف ثالث تحت أي ظرف.</p>
+    </div>
   </div>
 
   <!-- الفوتر السفلي -->
   <footer>
     <div class="footer-links">
-      <a href="#about">من نحن</a>
+      <a onclick="openModal('aboutModal')">من نحن</a>
       <a href="#contact">اتصل بنا</a>
-      <a href="#privacy">سياسة الخصوصية</a>
+      <a onclick="openModal('privacyModal')">سياسة الخصوصية</a>
     </div>
     <p>جميع الحقوق محفوظة منصة <strong>شي على شي</strong> &copy; 2026</p>
   </footer>
+
+  <!-- السكريبت الخاص بفتح النوافذ وإرسال النموذج بدون توجيه -->
+  <script>
+    // التحكم بالنوافذ المنبثقة
+    function openModal(id) {
+      document.getElementById(id).style.display = 'flex';
+    }
+    function closeModal(id) {
+      document.getElementById(id).style.display = 'none';
+    }
+
+    // إرسال البيانات إلى Formspree بدون مغادرة الموقع
+    const form = document.getElementById('contactForm');
+    const status = document.getElementById('statusMessage');
+    const submitBtn = document.getElementById('submitBtn');
+
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      submitBtn.disabled = true;
+      submitBtn.innerText = 'جاري الإرسال...';
+      
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+          status.className = 'form-status success';
+          status.innerText = '✨ تم إرسال رسالتك بنجاح! سنرد عليك في أقرب وقت.';
+          form.reset();
+        } else {
+          status.className = 'form-status error';
+          status.innerText = 'حدث خطأ أثناء الإرسال، يرجى المحاولة مرة أخرى.';
+        }
+      } catch (error) {
+        status.className = 'form-status error';
+        status.innerText = 'تعذر الاتصال بالسيرفر، تحقق من اتصالك بالإنترنت.';
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerText = 'إرسال الرسالة';
+      }
+    });
+  </script>
 
 </body>
 </html>
