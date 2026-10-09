@@ -3,16 +3,48 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>شي على شي | حيل • تطبيقات • ربح</title>
 
-  <!-- أيقونة الموقع وصورة المعاينة -->
+  <!-- ================= ==================== -->
+  <!-- 1. إعدادات السيو الأساسية للأرشفة في جوجل (SEO) -->
+  <!-- ================= ==================== -->
+  <title>شي على شي | حيل رقمية • تطبيقات مميزة • طرق ربح موثوقة</title>
+  <meta name="description" content="منصة شي على شي هي دليلك الأول لأفضل الحيل الرقمية، التطبيقات المفيدة، وطرق الربح الموثوقة من الإنترنت للمبتدئين.">
+  <meta name="keywords" content="شي على شي, تطبيقات, حيل تقنية, ربح من الانترنت, طرق ربح, مواقع ربحية, الذكاء الاصطناعي">
+  <meta name="author" content="شي على شي">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://shialashi.com/">
+
+  <!-- 2. أيقونة الموقع وصورة المعاينة (Favicon & Open Graph) -->
   <link rel="icon" type="image/png" href="cover.png">
   <link rel="apple-touch-icon" href="cover.png">
 
+  <!-- Open Graph / Facebook / WhatsApp / Telegram -->
+  <meta property="og:locale" content="ar_AR">
+  <meta property="og:type" content="website">
   <meta property="og:title" content="شي على شي | حيل • تطبيقات • ربح">
   <meta property="og:description" content="دليلك الأول لأفضل الحيل الرقمية، التطبيقات المفيدة، وطرق الربح الموثوقة من الإنترنت.">
   <meta property="og:image" content="mg.png">
-  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://shialashi.com/">
+  <meta property="og:site_name" content="شي على شي">
+
+  <!-- Twitter / X Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="شي على شي | حيل • تطبيقات • ربح">
+  <meta name="twitter:description" content="دليلك الأول لأفضل الحيل الرقمية، التطبيقات المفيدة، وطرق الربح الموثوقة من الإنترنت.">
+  <meta name="twitter:image" content="mg.png">
+
+  <!-- 3. البيانات المنظمة لمزودي محركات البحث (Schema.org JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "شي على شي",
+    "alternateName": "Shialashi",
+    "url": "https://shialashi.com/",
+    "description": "دليلك الأول لأفضل الحيل الرقمية، التطبيقات المفيدة، وطرق الربح الموثوقة",
+    "inLanguage": "ar"
+  }
+  </script>
 
   <style>
     :root {
@@ -143,7 +175,7 @@
       color: var(--dark-blue);
     }
 
-    /* شبكة الكروت (ستمتلئ أوتوماتيكياً بواسطة ملفات typ.js) */
+    /* شبكة الكروت (تضاف المواد ديناميكياً من ملفات JS) */
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -212,7 +244,7 @@
       background-color: var(--primary-blue);
     }
 
-    /* تصميم النوافذ المنبثقة (Modal) */
+    /* النوافذ المنبثقة (Modal) */
     .modal {
       display: none;
       position: fixed;
@@ -388,7 +420,7 @@
     <!-- قسم المشاركات الرئيسي -->
     <h2 class="section-title">أحدث المشاركات والتوصيات</h2>
     
-    <!-- الشبكة خالية الآن تماماً لتستقبل ملفات الجافاسكريبت -->
+    <!-- الشبكة خالية وتستقبل الكروت عبر ملفات الجافاسكريبت -->
     <div class="grid" id="mainGrid"></div>
 
   </div>
@@ -446,7 +478,7 @@
     <p>جميع الحقوق محفوظة منصة <strong>شي على شي</strong> &copy; 2026</p>
   </footer>
 
-  <!-- البرمجيات الأساسية للنوافذ والإرسال -->
+  <!-- البرمجيات الأساسية -->
   <script>
     function openModal(id) {
       document.getElementById(id).style.display = 'flex';
@@ -497,7 +529,7 @@
   </script>
 
   <!-- ==================================================== -->
-  <!-- استدعاء ملفات المواضيع الخارجية المستقبلية -->
+  <!-- استدعاء ملفات المواضيع (يتم إتاحة typ1.js, typ2.js...) -->
   <!-- ==================================================== -->
   
   <script src="typ1.js"></script>
