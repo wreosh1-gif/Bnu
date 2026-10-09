@@ -3,13 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>نبض الكرة | KoraPulse - أخبار وملخصات وجداول المباريات</title>
-    <!-- Tailwind CSS CDN -->
+    
+    <!-- SEO & Search Engine Optimization -->
+    <title>نبض الكرة | KoraPulse - أخبار، أهداف، وملخصات المباريات</title>
+    <meta name="description" content="منصة نبض الكرة KoraPulse لتغطية أحدث الأخبار الرياضية العاجلة، ملخصات الأهداف، نتائج وجداول المباريات اليومية أولاً بأول.">
+    <meta name="keywords" content="نبض الكرة, KoraPulse, أهداف اليوم, ملخصات المباريات, أخبار الرياضة, جدول المباريات, الدوري الإنجليزي, دوري أبطال أوروبا">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="نبض الكرة - KoraPulse">
+    <link rel="canonical" href="./">
+
+    <!-- Open Graph / Facebook / Twitter Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="نبض الكرة | KoraPulse - أخبار وملخصات المباريات">
+    <meta property="og:description" content="تغطية حية وفورية لأحدث ملخصات الأهداف والأخبار الرياضية العاجلة.">
+    <meta property="og:image" content="mg.png">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="نبض الكرة | KoraPulse">
+    <meta property="twitter:description" content="تغطية سريعة للأهداف والملخصات اليومية.">
+    <meta property="twitter:image" content="mg.png">
+
+    <!-- Icons & Assets -->
+    <link rel="icon" type="image/png" href="cover.png">
+    <link rel="apple-touch-icon" href="cover.png">
+
+    <!-- Tailwind CSS CDN & Cairo Font -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Cairo Font -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Schema.org SEO Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SportsNewsArticle",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "./"
+      },
+      "headline": "نبض الكرة | KoraPulse - تغطية إخبارية وملخصات رياضية",
+      "image": ["mg.png"],
+      "publisher": {
+        "@type": "Organization",
+        "name": "نبض الكرة",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "cover.png"
+        }
+      }
+    }
+    </script>
 
     <script>
         tailwind.config = {
@@ -33,35 +75,23 @@
     </script>
 
     <style>
-        body {
-            font-family: 'Cairo', sans-serif;
-            background-color: #0B131F;
-            color: #E2E8F0;
-        }
-        .pulse-glow {
-            box-shadow: 0 0 20px rgba(0, 229, 255, 0.25);
-        }
-        .text-glow {
-            text-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
-        }
+        body { font-family: 'Cairo', sans-serif; background-color: #0B131F; color: #E2E8F0; }
+        .pulse-glow { box-shadow: 0 0 20px rgba(0, 229, 255, 0.25); }
     </style>
 </head>
 <body class="bg-brand-dark min-h-screen flex flex-col justify-between">
 
-    <!-- Navbar -->
+    <!-- Header -->
     <header class="bg-brand-card/90 backdrop-blur-md border-b border-cyan-500/20 sticky top-0 z-50">
         <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
             <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-full bg-cyan-500/10 border border-cyan-400 flex items-center justify-center text-cyan-400 font-bold text-xl pulse-glow">
-                    <i class="fa-solid font-bold fa-heart-pulse"></i>
-                </div>
+                <img src="cover.png" alt="نبض الكرة Logo" class="w-10 h-10 rounded-full border border-cyan-400 object-cover pulse-glow" onerror="this.src='https://via.placeholder.com/40'">
                 <div>
                     <h1 class="text-xl font-black text-white leading-none">نبض <span class="text-cyan-400">الكرة</span></h1>
                     <span class="text-xs text-gray-400 tracking-wider">KoraPulse | @KoraPulse</span>
                 </div>
             </div>
 
-            <!-- Social Twitter/X Button -->
             <a href="https://twitter.com/KoraPulse" target="_blank" class="bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 px-3 py-1.5 rounded-lg text-xs font-bold transition flex items-center gap-2">
                 <i class="fa-brands fa-x-twitter"></i>
                 <span class="hidden sm:inline">تابعنا على X</span>
@@ -69,126 +99,41 @@
         </div>
     </header>
 
-    <!-- Ad Area (Top Header Adsterra Placeholder) -->
+    <!-- Adsterra Banner Area -->
     <div class="max-w-6xl mx-auto px-4 mt-4 w-full">
-        <div onclick="redirectToAd()" class="cursor-pointer bg-gradient-to-r from-cyan-900/40 via-brand-card to-emerald-900/40 border border-cyan-500/30 rounded-xl p-3 text-center transition hover:border-cyan-400 shadow-lg">
+        <div onclick="openAdAndAction()" class="cursor-pointer bg-gradient-to-r from-cyan-900/40 via-brand-card to-emerald-900/40 border border-cyan-500/30 rounded-xl p-3 text-center transition hover:border-cyan-400 shadow-lg">
             <span class="bg-cyan-500/20 text-cyan-300 text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider mb-1 inline-block">إعلان مُموَّل</span>
             <p class="text-sm font-bold text-white">🔥 اضغط هنا لمشاهدة ملخصات اليوم وتحديثات المباريات حصرياً</p>
         </div>
     </div>
 
-    <!-- Main Content -->
+    <!-- Main Dynamic Content -->
     <main class="max-w-6xl mx-auto px-4 py-6 w-full flex-grow space-y-8">
 
-        <!-- News Ticker -->
-        <div class="bg-brand-card border-r-4 border-cyan-400 p-3 rounded-lg flex items-center gap-3 shadow-md">
-            <span class="bg-red-600 text-white text-xs font-extrabold px-2 py-1 rounded animate-pulse shrink-0">عاجل</span>
-            <marquee class="text-sm font-semibold text-gray-200">
-                ⚽ جدول مباريات اليوم متوفر الآن | 🎬 مشاهدة ملخص مبارة برشلونه وريال مدريد كاملاً HD | 🏆 ترتيب الفرق في الدوري الإنجليزي الممتاز
-            </marquee>
-        </div>
-
-        <!-- Latest Highlights Section -->
+        <!-- Dynamic Posts Grid -->
         <section>
             <div class="flex items-center justify-between mb-4">
                 <h2 class="text-lg font-bold text-white flex items-center gap-2">
-                    <i class="fa-solid fa-circle-play text-cyan-400"></i> أحدث الملخصات والأهداف
+                    <i class="fa-solid fa-newspaper text-cyan-400"></i> أحدث الأخبار والملخصات
                 </h2>
-                <span class="text-xs text-gray-400">تحديث مستمر</span>
+                <span class="text-xs text-gray-400">تحديث أوتوماتيكي</span>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <!-- Highlight Card 1 -->
-                <div onclick="redirectToAd()" class="bg-brand-card rounded-xl border border-gray-800 hover:border-cyan-500/50 transition overflow-hidden cursor-pointer group">
-                    <div class="relative bg-gray-900 h-40 flex items-center justify-center">
-                        <div class="absolute inset-0 bg-gradient-to-t from-brand-card to-transparent z-10"></div>
-                        <i class="fa-solid fa-play text-4xl text-cyan-400 group-hover:scale-110 transition z-20"></i>
-                        <span class="absolute top-2 right-2 bg-black/70 text-cyan-300 text-xs px-2 py-0.5 rounded z-20">HD</span>
-                    </div>
-                    <div class="p-4">
-                        <span class="text-xs text-emerald-400 font-bold">ملخص مباراة</span>
-                        <h3 class="font-bold text-white text-sm mt-1 group-hover:text-cyan-400 transition">ملخص وأهداف مباراة ريال مدريد وبرشلونة كاملة</h3>
-                        <p class="text-xs text-gray-400 mt-2"><i class="fa-regular fa-clock ml-1"></i> منذ ساعة واحدة</p>
-                    </div>
-                </div>
+            <!-- Container for JS Dynamic Injection -->
+            <div id="posts-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <!-- Data will load here dynamically from type1.js, type2.js ... -->
+            </div>
 
-                <!-- Highlight Card 2 -->
-                <div onclick="redirectToAd()" class="bg-brand-card rounded-xl border border-gray-800 hover:border-cyan-500/50 transition overflow-hidden cursor-pointer group">
-                    <div class="relative bg-gray-900 h-40 flex items-center justify-center">
-                        <div class="absolute inset-0 bg-gradient-to-t from-brand-card to-transparent z-10"></div>
-                        <i class="fa-solid fa-play text-4xl text-cyan-400 group-hover:scale-110 transition z-20"></i>
-                        <span class="absolute top-2 right-2 bg-black/70 text-cyan-300 text-xs px-2 py-0.5 rounded z-20">HD</span>
-                    </div>
-                    <div class="p-4">
-                        <span class="text-xs text-emerald-400 font-bold">ملخص مباراة</span>
-                        <h3 class="font-bold text-white text-sm mt-1 group-hover:text-cyan-400 transition">جميع أهداف مانشستر سيتي وليفربول اليوم</h3>
-                        <p class="text-xs text-gray-400 mt-2"><i class="fa-regular fa-clock ml-1"></i> منذ ساعتين</p>
-                    </div>
-                </div>
-
-                <!-- Highlight Card 3 -->
-                <div onclick="redirectToAd()" class="bg-brand-card rounded-xl border border-gray-800 hover:border-cyan-500/50 transition overflow-hidden cursor-pointer group">
-                    <div class="relative bg-gray-900 h-40 flex items-center justify-center">
-                        <div class="absolute inset-0 bg-gradient-to-t from-brand-card to-transparent z-10"></div>
-                        <i class="fa-solid fa-play text-4xl text-cyan-400 group-hover:scale-110 transition z-20"></i>
-                        <span class="absolute top-2 right-2 bg-black/70 text-cyan-300 text-xs px-2 py-0.5 rounded z-20">HD</span>
-                    </div>
-                    <div class="p-4">
-                        <span class="text-xs text-emerald-400 font-bold">ملخص مباراة</span>
-                        <h3 class="font-bold text-white text-sm mt-1 group-hover:text-cyan-400 transition">ملخص مباراة الهلال والنصر - ديربي الرياض</h3>
-                        <p class="text-xs text-gray-400 mt-2"><i class="fa-regular fa-clock ml-1"></i> منذ 3 ساعات</p>
-                    </div>
-                </div>
+            <!-- Fallback Loader / No Content Message -->
+            <div id="loading-msg" class="text-center py-10 text-gray-500">
+                <i class="fa-solid fa-circle-notch fa-spin text-2xl text-cyan-400 mb-2"></i>
+                <p>جاري تحميل الأخبار والملخصات...</p>
             </div>
         </section>
 
-        <!-- Match Schedule Section -->
-        <section>
-            <div class="flex items-center justify-between mb-4">
-                <h2 class="text-lg font-bold text-white flex items-center gap-2">
-                    <i class="fa-solid fa-calendar-days text-cyan-400"></i> نتائج وجدول المباريات
-                </h2>
-                <span class="text-xs text-cyan-400 font-semibold cursor-pointer" onclick="redirectToAd()">عرض الكل &leftarrow;</span>
-            </div>
-
-            <div class="space-y-3">
-                <!-- Match 1 -->
-                <div onclick="redirectToAd()" class="bg-brand-card border border-gray-800 rounded-xl p-4 flex items-center justify-between hover:border-cyan-500/40 transition cursor-pointer">
-                    <div class="flex items-center gap-3 w-1/3 justify-end">
-                        <span class="font-bold text-sm text-white">ريال مدريد</span>
-                        <i class="fa-solid fa-shield-halved text-amber-400 text-xl"></i>
-                    </div>
-                    <div class="text-center px-4">
-                        <span class="bg-emerald-500/20 text-emerald-400 text-xs font-bold px-2.5 py-1 rounded-full border border-emerald-500/30">انتهت 3 - 1</span>
-                        <p class="text-[11px] text-gray-400 mt-1">اضغط للتفاصيل والملخص</p>
-                    </div>
-                    <div class="flex items-center gap-3 w-1/3 justify-start">
-                        <i class="fa-solid fa-shield-halved text-blue-400 text-xl"></i>
-                        <span class="font-bold text-sm text-white">برشلونة</span>
-                    </div>
-                </div>
-
-                <!-- Match 2 -->
-                <div onclick="redirectToAd()" class="bg-brand-card border border-gray-800 rounded-xl p-4 flex items-center justify-between hover:border-cyan-500/40 transition cursor-pointer">
-                    <div class="flex items-center gap-3 w-1/3 justify-end">
-                        <span class="font-bold text-sm text-white">ليفربول</span>
-                        <i class="fa-solid fa-shield-halved text-red-500 text-xl"></i>
-                    </div>
-                    <div class="text-center px-4">
-                        <span class="bg-emerald-500/20 text-emerald-400 text-xs font-bold px-2.5 py-1 rounded-full border border-emerald-500/30">انتهت 2 - 2</span>
-                        <p class="text-[11px] text-gray-400 mt-1">اضغط للتفاصيل والملخص</p>
-                    </div>
-                    <div class="flex items-center gap-3 w-1/3 justify-start">
-                        <i class="fa-solid fa-shield-halved text-sky-400 text-xl"></i>
-                        <span class="font-bold text-sm text-white">مانشستر سيتي</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Big CTA Button for Adsterra Direct Link -->
+        <!-- Big CTA Button -->
         <div class="text-center my-8">
-            <button onclick="redirectToAd()" class="bg-gradient-to-r from-cyan-500 to-emerald-500 hover:from-cyan-400 hover:to-emerald-400 text-brand-dark font-black text-lg px-8 py-4 rounded-xl shadow-lg transition transform hover:-translate-y-1 w-full sm:w-auto">
+            <button onclick="openAdAndAction()" class="bg-gradient-to-r from-cyan-500 to-emerald-500 hover:from-cyan-400 hover:to-emerald-400 text-brand-dark font-black text-lg px-8 py-4 rounded-xl shadow-lg transition transform hover:-translate-y-1 w-full sm:w-auto">
                 <i class="fa-solid fa-circle-play ml-2"></i> اضغط هنا لمشاهدة كافة الملخصات والنتائج مباشرة
             </button>
         </div>
@@ -199,18 +144,88 @@
     <footer class="bg-brand-card border-t border-gray-800 py-6 mt-8">
         <div class="max-w-6xl mx-auto px-4 text-center text-xs text-gray-500 space-y-2">
             <p>جميع الحقوق محفوظة &copy; 2026 - موقع <span class="text-cyan-400 font-bold">نبض الكرة | KoraPulse</span></p>
-            <p>حساب التغطية الرياضية السريعة والملخصات على منصة X: <a href="https://twitter.com/KoraPulse" class="text-cyan-400 underline">@KoraPulse</a></p>
         </div>
     </footer>
 
-    <!-- Adsterra Redirect Script -->
+    <!-- Adsterra & Dynamic File Loader Logic -->
     <script>
-        // ضع رابط أديستيرا المباشر (Direct Link) هنا بدلاً من الرابط الحالي
-        const ADSTERRA_DIRECT_LINK = "https://www.google.com";
+        const ADSTERRA_LINK = "https://www.profitableratecpmnetwork.com/k6m3s1kj?key=384085d471ecea82da753956b7c3440b";
+        window.koraPosts = [];
 
-        function redirectToAd() {
-            window.open(ADSTERRA_DIRECT_LINK, '_blank');
+        // Function to trigger Adsterra and optionally execute callback
+        function openAdAndAction(callbackUrl) {
+            window.open(ADSTERRA_LINK, '_blank');
+            if (callbackUrl) {
+                setTimeout(() => {
+                    window.location.href = callbackUrl;
+                }, 300);
+            }
         }
+
+        // Render Posts to DOM
+        function renderPosts() {
+            const container = document.getElementById('posts-container');
+            const loader = document.getElementById('loading-msg');
+            
+            if (window.koraPosts.length === 0) {
+                loader.innerHTML = '<p class="text-gray-400">لا توجد أحدث الأخبار حالياً.</p>';
+                return;
+            }
+
+            loader.style.display = 'none';
+            container.innerHTML = '';
+
+            window.koraPosts.forEach(post => {
+                const card = document.createElement('div');
+                card.className = "bg-brand-card rounded-xl border border-gray-800 hover:border-cyan-500/50 transition overflow-hidden cursor-pointer group flex flex-col justify-between";
+                card.onclick = () => openAdAndAction(post.link || null);
+
+                card.innerHTML = `
+                    <div>
+                        <div class="relative bg-gray-900 h-48 overflow-hidden">
+                            <img src="${post.image || 'mg.png'}" alt="${post.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                            <div class="absolute inset-0 bg-gradient-to-t from-brand-card to-transparent"></div>
+                            ${post.type === 'video' ? '<div class="absolute inset-0 flex items-center justify-center"><i class="fa-solid fa-play text-4xl text-cyan-400"></i></div>' : ''}
+                            <span class="absolute top-2 right-2 bg-cyan-500 text-black text-xs font-bold px-2 py-0.5 rounded">${post.badge || 'جديد'}</span>
+                        </div>
+                        <div class="p-4">
+                            <span class="text-xs text-emerald-400 font-bold">${post.category || 'أخبار'}</span>
+                            <h3 class="font-bold text-white text-base mt-1 group-hover:text-cyan-400 transition line-clamp-2">${post.title}</h3>
+                            <p class="text-xs text-gray-400 mt-2 line-clamp-2">${post.description || ''}</p>
+                        </div>
+                    </div>
+                    <div class="p-4 pt-0 flex items-center justify-between border-t border-gray-800/50 mt-3">
+                        <span class="text-[11px] text-gray-500"><i class="fa-regular fa-clock ml-1"></i> ${post.time || 'الآن'}</span>
+                        <button class="bg-cyan-500/10 group-hover:bg-cyan-500 group-hover:text-black text-cyan-400 border border-cyan-500/30 text-xs font-bold px-3 py-1.5 rounded-lg transition">
+                            ${post.buttonText || 'مشاهدة / قراءة'}
+                        </button>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // Auto Load Script Files (type1.js, type2.js, type3.js...) Until NotFound
+        let scriptIndex = 1;
+        function loadNextScript() {
+            const script = document.createElement('script');
+            script.src = `type${scriptIndex}.js`;
+            
+            script.onload = function() {
+                scriptIndex++;
+                loadNextScript(); // Load next file (type2.js, type3.js...)
+            };
+
+            script.onerror = function() {
+                // Stopped when no more typeX.js files are found
+                renderPosts();
+            };
+
+            document.body.appendChild(script);
+        }
+
+        // Start loading scripts on load
+        window.addEventListener('DOMContentLoaded', loadNextScript);
     </script>
 </body>
 </html>
